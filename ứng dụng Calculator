@@ -1,1 +1,44 @@
-
+<html>
+<head>
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+</head>
+<body class="bg-gray-200 flex items-center justify-center h-screen">
+    <div class="bg-white w-80 rounded-lg shadow-lg">
+        <!-- Header -->
+        <div class="bg-black text-white flex items-center justify-between p-2">
+            <div class="flex items-center">
+                <i class="fas fa-sun text-red-500"></i>
+                <span class="ml-2">LifeCycle</span>
+            </div>
+            <div class="text-xs">7:00</div>
+        </div>
+        <!-- Display -->
+        <div class="bg-gray-300 text-right text-4xl p-4">0</div>
+        <!-- Buttons -->
+        <div class="grid grid-cols-4 gap-1 p-1">
+            <button class="bg-gray-300 p-4">CE</button>
+            <button class="bg-gray-300 p-4">C</button>
+            <button class="bg-gray-300 p-4">BS</button>
+            <button class="bg-gray-300 p-4">/</button>
+            <button class="bg-gray-300 p-4">7</button>
+            <button class="bg-gray-300 p-4">8</button>
+            <button class="bg-gray-300 p-4">9</button>
+            <button class="bg-gray-300 p-4">x</button>
+            <button class="bg-gray-300 p-4">4</button>
+            <button class="bg-gray-300 p-4">5</button>
+            <button class="bg-gray-300 p-4">6</button>
+            <button class="bg-gray-300 p-4">-</button>
+            <button class="bg-gray-300 p-4">1</button>
+            <button class="bg-gray-300 p-4">2</button>
+            <button class="bg-gray-300 p-4">3</button>
+            <button class="bg-gray-300 p-4">+</button>
+            <button class="bg-gray-300 p-4">+/-</button>
+            <button class="bg-gray-300 p-4">0</button>
+            <button class="bg-gray-300 p-4">.</button>
+            <button class="bg-gray-300 p-4">=</button>
+        </div>
+    </div>
+</body>
+</html>
