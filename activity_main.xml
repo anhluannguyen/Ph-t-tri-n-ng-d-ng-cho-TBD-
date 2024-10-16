@@ -1,0 +1,78 @@
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_launcher_foreground"
+            android:contentDescription="App icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="LifeCycle"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#E0E0E0"
+        android:gravity="end"
+        android:padding="20dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="48sp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:background="#CCCCCC">
+
+        <Button android:id="@+id/buttonCE" style="@style/CalcButton" android:text="CE" />
+        <Button android:id="@+id/buttonC" style="@style/CalcButton" android:text="C" />
+        <Button android:id="@+id/buttonBS" style="@style/CalcButton" android:text="BS" />
+        <Button android:id="@+id/buttonDivide" style="@style/CalcButton" android:text="/" />
+        <Button android:id="@+id/button7" style="@style/CalcButton" android:text="7" />
+        <Button android:id="@+id/button8" style="@style/CalcButton" android:text="8" />
+        <Button android:id="@+id/button9" style="@style/CalcButton" android:text="9" />
+        <Button android:id="@+id/buttonMultiply" style="@style/CalcButton" android:text="x" />
+        <Button android:id="@+id/button4" style="@style/CalcButton" android:text="4" />
+        <Button android:id="@+id/button5" style="@style/CalcButton" android:text="5" />
+        <Button android:id="@+id/button6" style="@style/CalcButton" android:text="6" />
+        <Button android:id="@+id/buttonMinus" style="@style/CalcButton" android:text="-" />
+        <Button android:id="@+id/button1" style="@style/CalcButton" android:text="1" />
+        <Button android:id="@+id/button2" style="@style/CalcButton" android:text="2" />
+        <Button android:id="@+id/button3" style="@style/CalcButton" android:text="3" />
+        <Button android:id="@+id/buttonPlus" style="@style/CalcButton" android:text="+" />
+        <Button android:id="@+id/buttonPlusMinus" style="@style/CalcButton" android:text="+/-" />
+        <Button android:id="@+id/button0" style="@style/CalcButton" android:text="0" />
+        <Button android:id="@+id/buttonDot" style="@style/CalcButton" android:text="." />
+        <Button android:id="@+id/buttonEquals" style="@style/CalcButton" android:text="=" />
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#000000" />
+</LinearLayout>
+```
