@@ -1,1 +1,1 @@
-# Ph-t-tri-n-ng-d-ng-cho-TBD-
+Phát triển ứng dụng cho Thiết bị di động
