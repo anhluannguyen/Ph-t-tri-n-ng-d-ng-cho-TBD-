@@ -1,0 +1,170 @@
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .app-bar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .app-bar img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .display {
+            background-color: #e0e0e0;
+            color: black;
+            font-size: 48px;
+            text-align: right;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+        }
+        .button {
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            font-size: 24px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .button:active {
+            background-color: #d0d0d0;
+        }
+        .footer {
+            background-color: #333;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-bar">
+        <img alt="App icon" src="https://storage.googleapis.com/a1aa/image/OEudTbO1GC5cD5StwfmMihwgtckvbsQvmtkU40V2nXf42inTA.jpg" />
+        <span>LifeCycle</span>
+    </div>
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+        <div class="button" onclick="clearEntry()">CE</div>
+        <div class="button" onclick="clearAll()">C</div>
+        <div class="button" onclick="backspace()">BS</div>
+        <div class="button" onclick="appendOperator('/')">/</div>
+        <div class="button" onclick="appendNumber(7)">7</div>
+        <div class="button" onclick="appendNumber(8)">8</div>
+        <div class="button" onclick="appendNumber(9)">9</div>
+        <div class="button" onclick="appendOperator('*')">x</div>
+        <div class="button" onclick="appendNumber(4)">4</div>
+        <div class="button" onclick="appendNumber(5)">5</div>
+        <div class="button" onclick="appendNumber(6)">6</div>
+        <div class="button" onclick="appendOperator('-')">-</div>
+        <div class="button" onclick="appendNumber(1)">1</div>
+        <div class="button" onclick="appendNumber(2)">2</div>
+        <div class="button" onclick="appendNumber(3)">3</div>
+        <div class="button" onclick="appendOperator('+')">+</div>
+        <div class="button" onclick="toggleSign()">+/-</div>
+        <div class="button" onclick="appendNumber(0)">0</div>
+        <div class="button" onclick="appendDot()">.</div>
+        <div class="button" onclick="calculate()">=</div>
+    </div>
+    <div class="footer"></div>
+
+    <script>
+        let display = document.getElementById('display');
+        let currentInput = '0';
+        let operator = null;
+        let previousInput = null;
+
+        function updateDisplay() {
+            display.innerText = currentInput;
+        }
+
+        function clearEntry() {
+            currentInput = '0';
+            updateDisplay();
+        }
+
+        function clearAll() {
+            currentInput = '0';
+            operator = null;
+            previousInput = null;
+            updateDisplay();
+        }
+
+        function backspace() {
+            if (currentInput.length > 1) {
+                currentInput = currentInput.slice(0, -1);
+            } else {
+                currentInput = '0';
+            }
+            updateDisplay();
+        }
+
+        function appendNumber(number) {
+            if (currentInput === '0') {
+                currentInput = number.toString();
+            } else {
+                currentInput += number.toString();
+            }
+            updateDisplay();
+        }
+
+        function appendOperator(op) {
+            if (operator !== null) {
+                calculate();
+            }
+            previousInput = currentInput;
+            operator = op;
+            currentInput = '0';
+        }
+
+        function appendDot() {
+            if (!currentInput.includes('.')) {
+                currentInput += '.';
+            }
+            updateDisplay();
+        }
+
+        function toggleSign() {
+            if (currentInput !== '0') {
+                currentInput = (parseFloat(currentInput) * -1).toString();
+            }
+            updateDisplay();
+        }
+
+        function calculate() {
+            if (operator === null || previousInput === null) {
+                return;
+            }
+            let result;
+            switch (operator) {
+                case '+':
+                    result = parseFloat(previousInput) + parseFloat(currentInput);
+                    break;
+                case '-':
+                    result = parseFloat(previousInput) - parseFloat(currentInput);
+                    break;
+                case '*':
+                    result = parseFloat(previousInput) * parseFloat(currentInput);
+                    break;
+                case '/':
+                    result = parseFloat(previousInput) / parseFloat(currentInput);
+                    break;
+            }
+            currentInput = result.toString();
+            operator = null;
+            previousInput = null;
+            updateDisplay();
+        }
+    </script>
+</body>
+</html>
